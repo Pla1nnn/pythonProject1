@@ -1,0 +1,205 @@
+def z1():
+    class Restaurant:
+        def __init__(self, name, kitchen):  #атрибуты
+            self.name = name
+            self.kitchen = kitchen
+
+        def describe_restaurant(self):  #методы
+            print(f"Ресторан: {self.name}")
+            print(f"Кухня: {self.kitchen}")
+            print(f"Ресторан {self.name} открыт!")
+
+    class IceCreamStand(Restaurant):    #наследование
+        def __init__(self, name, kitchen, flavors):
+            super().__init__(name, kitchen)
+            self.flavors = flavors
+
+        def spisok(self):
+            print("Вкусы мороженого:")
+            for flavor in self.flavors:
+                print(flavor)
+
+    iceCreamStand = IceCreamStand("Мороз", "Мороженое", ["Шоколад", "Ваниль", "Клубника", "Фисташка", "Карамель"])  # экземпляр
+
+    print(iceCreamStand.name)  # вывод атрибутов
+    print(iceCreamStand.kitchen)
+
+    iceCreamStand.describe_restaurant()  # вызов методов
+    iceCreamStand.spisok()  # вывод списка вкусов
+print(z1())
+
+
+def z2():
+    input("Задача 2.1: добавление локации и времени работы")
+    class Restaurant:
+        def __init__(self, name, kitchen):
+            self.name = name
+            self.kitchen = kitchen
+
+        def describe_restaurant(self):
+            print(f"Ресторан: {self.name}")
+            print(f"Кухня: {self.kitchen}")
+            print(f"Ресторан {self.name} открыт!")
+            print(f"Локация: {self.location}")
+            print(f"Время работы: {self.time}")
+
+    class IceCreamStand(Restaurant):
+        def __init__(self, name, kitchen, flavors, location, time):
+            super().__init__(name, kitchen)
+            self.flavors = flavors
+            self.location = location
+            self.time = time
+
+        def spisok(self):
+            print("Вкусы мороженого:")
+            for flavor in self.flavors:
+                print(flavor)
+
+    iceCreamStand = IceCreamStand("Мороз", "Мороженое", ["Шоколад", "Ваниль", "Клубника", "Фисташка", "Карамель"], "Москва", "10:00-20:00")  # экземпляр класса
+
+    print(iceCreamStand.name)  # вывод атрибутов
+    print(iceCreamStand.kitchen)
+    print(iceCreamStand.location)
+    print(iceCreamStand.time)
+
+    iceCreamStand.describe_restaurant()  # вызов методов
+
+    iceCreamStand.spisok()  # вывод списка вкусов
+print(z2())
+
+
+def z3():
+    input("Задача 2.2: добавление и удаление вкусов")
+    class Restaurant:
+        def __init__(self, name, kitchen):
+            self.name = name
+            self.kitchen = kitchen
+
+        def describe_restaurant(self):
+            print(f"Ресторан: {self.name}")
+            print(f"Кухня: {self.kitchen}")
+            print(f"Ресторан {self.name} открыт!")
+            print(f"Локация: {self.location}")
+            print(f"Время работы: {self.time}")
+
+    class IceCreamStand(Restaurant):
+        def __init__(self, name, kitchen, flavors, location, time):
+            super().__init__(name, kitchen)
+            self.flavors = flavors
+            self.location = location
+            self.time = time
+
+        def spisok(self):
+            print("Вкусы мороженого:")
+            for flavor in self.flavors:
+                print(flavor)
+
+        def add(self, flavor):
+            self.flavors.append(flavor)
+
+        def remove(self, flavor):
+            self.flavors.remove(flavor)
+
+        def new_spisok(self):
+            print("Новый список вкусов:")
+            for flavor in self.flavors:
+                print(flavor)
+
+    iceCreamStand = IceCreamStand("Мороз", "Мороженое", ["Шоколад", "Ваниль", "Клубника", "Фисташка", "Карамель"], "Москва", "10:00-20:00")  # экземпляр класса
+    print(iceCreamStand.name)  # вывод атрибутов
+    print(iceCreamStand.kitchen)
+    print(iceCreamStand.location)
+    print(iceCreamStand.time)
+
+    iceCreamStand.describe_restaurant()  # вызов методов
+    iceCreamStand.spisok()
+
+    new = input("Введите новый вкус для добавления: ")
+    iceCreamStand.add(new)
+
+    # Ввод вкуса для удаления
+    remove = input("Введите вкус для удаления: ")
+    iceCreamStand.remove(remove)
+
+    iceCreamStand.new_spisok()
+print(z3())
+
+def z4():
+    input("Задача 2.3: проверка наличия вкуса")
+    class Restaurant:
+        def __init__(self, name, kitchen):
+            self.name = name
+            self.kitchen = kitchen
+
+        def describe_restaurant(self):
+            print(f"Ресторан: {self.name}")
+            print(f"Кухня: {self.kitchen}")
+            print(f"Ресторан {self.name} открыт!")
+            print(f"Локация: {self.location}")
+            print(f"Время работы: {self.time}")
+
+    class IceCreamStand(Restaurant):
+        def __init__(self, name, kitchen, flavors, location, time):
+            super().__init__(name, kitchen)
+            self.flavors = flavors
+            self.location = location
+            self.time = time
+
+        def spisok(self):
+            print("Вкусы мороженого:")
+            for flavor in self.flavors:
+                print(flavor)
+
+        def availability(self):
+            flavor = input("Введите вкус: ")
+            if flavor in self.flavors:
+                print("Вкус есть")
+            else:
+                print("Такого вкуса нет")
+
+    iceCreamStand = IceCreamStand("Мороз", "Мороженое", ["Шоколад", "Ваниль", "Клубника", "Фисташка", "Карамель"], "Москва", "10:00-20:00")
+
+    print(iceCreamStand.name)   #вызов атрибутов
+    print(iceCreamStand.kitchen)
+    print(iceCreamStand.location)
+    print(iceCreamStand.time)
+
+    iceCreamStand.describe_restaurant() #вызов методов
+
+    iceCreamStand.spisok()
+    iceCreamStand.availability()    #проверка наличия
+print(z4())
+def zd5():
+    import tkinter as tk
+
+    class IceCreamStand:
+        def __init__(self, name, flavors):
+            self.name = name
+            self.flavors = flavors
+
+        def display_flavors(self):
+            print("Available flavors:")
+            for flavor in self.flavors:
+                print(flavor)
+
+    class IceCreamApp:
+        def __init__(self, ice_cream_stand):
+            self.ice_cream_stand = ice_cream_stand
+
+            self.root = tk.Tk()
+            self.root.title(self.ice_cream_stand.name)
+
+            self.flavors_label = tk.Label(self.root, text="Available flavors:")
+            self.flavors_label.pack()
+
+            for flavor in self.ice_cream_stand.flavors:
+                flavor_label = tk.Label(self.root, text=flavor)
+                flavor_label.pack()
+
+            self.root.mainloop()
+
+    if __name__ == "__main__":
+        ice_cream_stand = IceCreamStand("Cool Treats", ["Vanilla", "Chocolate", "Strawberry", "Mint"])
+        ice_cream_stand.display_flavors()
+
+        app = IceCreamApp(ice_cream_stand)
