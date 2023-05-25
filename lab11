@@ -67,7 +67,7 @@ def z3():
         def update_rating(self, number2):
             self.number1 = number2
 
-    newRestaurant = Restaurant("onetwo", "Итальянская", 3.2)
+    newRestaurant = Restaurant("onetwo", "Итальянская", 1.2)
     print(newRestaurant.name)
     print(newRestaurant.kitchen)
 
