@@ -11,7 +11,7 @@ def z1():
         def open_restaurant(self):  # метод, выводящий атрибут
             print(f"Ресторан {self.name} открыт!")
 
-    newRestaurant = Restaurant("Italiani", "Итальянская")   # экземпляр
+    newRestaurant = Restaurant("onetwo", "Итальянская")   # экземпляр
     print(newRestaurant.name)   # вывод 2х атрибутов по отдельности
     print(newRestaurant.kitchen)
 
